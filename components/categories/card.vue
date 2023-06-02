@@ -9,7 +9,7 @@
                 />
             </div>
         </div>
-        <p class="text-center text-sm capitalize  ">{{ categoryTitle }}</p>
+        <p class="text-center text-sm capitalize text-white z-50 ">{{ categoryTitle }}</p>
 
 
     </div>
