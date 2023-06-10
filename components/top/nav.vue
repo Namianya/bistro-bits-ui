@@ -1,6 +1,6 @@
 <template>
-    <div class="flex justify-between w-full px-4 py-2 backdrop-blur-sm ">
-        <div class="flex gap-2 items-center">
+    <div class="flex justify-between w-full px-4 py-2 backdrop-blur-sm md:px-4 lg:px-16 ">
+        <div class="flex gap-2 items-center ">
             <NuxtLink
                 to="food"
                 v-if="$route.name == 'menu-id-details'"
@@ -21,7 +21,9 @@
                     class="text-xl text-white"
                 />
             </NuxtLink>
-            <p class="text-orange-500 font-normal "><span class="text-lime-500 font-semibold ">Bistro</span>Bits</p>
+            <NuxtLink to="/">
+                <p class="text-orange-500 font-normal "><span class="text-lime-500 font-semibold ">Bistro</span>Bits</p>
+            </NuxtLink>
         </div>
         <div class="space-x-2">
             <button class="btn btn-square btn-sm btn-ghost hover:bg-orange-500/10 hover:text-orange-500">
