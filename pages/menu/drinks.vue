@@ -1,6 +1,9 @@
 <template>
 	<div class="h-screen">
-		<FoodMenu :food-cartegories="foodCartegories" />
+		<FoodMenu
+			:menu-items="[]"
+			:food-cartegories="foodCartegories"
+		/>
 	</div>
 </template>
 

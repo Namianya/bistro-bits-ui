@@ -1,10 +1,17 @@
 <template>
 	<div class="h-screen">
-		<FoodMenu :food-cartegories="foodCartegories" />
+		<FoodMenu
+			:menu-items="menuItems"
+			:food-cartegories="foodCartegories"
+			:loading="pending"
+		/>
 	</div>
 </template>
 
 <script setup lang="ts">
+import { APIFormart } from '~/types/foodType';
+import { API_URL } from '~/variables/urls';
+
 const foodCartegories: { img: string; categoryTitle: string }[] = [
 	{
 		img: "https://images.unsplash.com/photo-1568158879083-c42860933ed7",
@@ -33,6 +40,20 @@ const foodCartegories: { img: string; categoryTitle: string }[] = [
 		categoryTitle: "Vegetarian",
 	},
 ];
+
+const { data, pending, error } = await useFetch<APIFormart>(API_URL + '/menu_items', {
+	method: 'GET',
+	headers: {
+		'Content-Type': 'application/json'
+	}
+})
+
+const menuItems = computed(() => {
+	if (data.value) {
+		return [data.value]
+	}
+	return []
+})
 </script>
 
 <style scoped></style>
